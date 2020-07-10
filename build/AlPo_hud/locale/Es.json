@@ -1,6 +1,6 @@
 {
   "zona": "Zona: ",
-  "dia": "DÃ­a: ",
+  "dia": "Día: ",
   "temp": "Temperatura: ",
   "hora": "Hora: ",
   "fuera_ciudad": "~COLOR_REDLIGHT~Fuera de ciudad",
@@ -9,6 +9,6 @@
   "miercoles": "Miercoles",
   "jueves": "Jueves",
   "viernes": "Viernes",
-  "sabado": "SÃ¡bado",
+  "sabado": "Sábado",
   "domingo": "Domingo"
 }

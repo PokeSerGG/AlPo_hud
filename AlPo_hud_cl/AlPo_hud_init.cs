@@ -268,105 +268,62 @@ namespace AlPo_hud_cl
         {
             Vector3 pedCoords = API.GetEntityCoords(API.PlayerPedId(), true, true);
             uint town_hash = Function.Call<uint>((Hash)0x43AD8FC02B429D33, pedCoords.X, pedCoords.Y, pedCoords.Z, 1);
-            if (town_hash == API.GetHashKey("Annesburg"))
+            switch (town_hash)
             {
-                return "~COLOR_GREEN~Annesburg";
-            }
-            else if (town_hash == API.GetHashKey("Armadillo"))
-            {
-                return "~COLOR_GREEN~Armadillo";
-            }
-            else if (town_hash == API.GetHashKey("Blackwater"))
-            {
-                return "~COLOR_GREEN~Blackwater";
-            }
-            else if (town_hash == API.GetHashKey("BeechersHope"))
-            {
-                return "~COLOR_GREEN~BeechersHope";
-            }
-            else if (town_hash == API.GetHashKey("Braithwaite"))
-            {
-                return "~COLOR_GREEN~Braithwaite";
-            }
-            else if (town_hash == API.GetHashKey("Butcher"))
-            {
-                return "~COLOR_GREEN~Butcher";
-            }
-            else if (town_hash == API.GetHashKey("Caliga"))
-            {
-                return "~COLOR_GREEN~Caliga";
-            }
-            else if (town_hash == API.GetHashKey("cornwall"))
-            {
-                return "~COLOR_GREEN~Cornwall";
-            }
-            else if (town_hash == API.GetHashKey("Emerald"))
-            {
-                return "~COLOR_GREEN~Emerald";
-            }
-            else if (town_hash == API.GetHashKey("lagras"))
-            {
-                return "~COLOR_GREEN~lagras";
-            }
-            else if (town_hash == API.GetHashKey("Manzanita"))
-            {
-                return "~COLOR_GREEN~Manzanita";
-            }
-            else if (town_hash == API.GetHashKey("Rhodes"))
-            {
-                return "~COLOR_GREEN~Rhodes";
-            }
-            else if (town_hash == API.GetHashKey("Siska"))
-            {
-                return "~COLOR_GREEN~Siska";
-            }
-            else if (town_hash == API.GetHashKey("StDenis"))
-            {
-                return "~COLOR_GREEN~Saint Denis";
-            }
-            else if (town_hash == API.GetHashKey("Strawberry"))
-            {
-                return "~COLOR_GREEN~Strawberry";
-            }
-            else if (town_hash == API.GetHashKey("Tumbleweed"))
-            {
-                return "~COLOR_GREEN~Tumbleweed";
-            }
-            else if (town_hash == API.GetHashKey("valentine"))
-            {
-                return "~COLOR_GREEN~Valentine";
-            }
-            else if (town_hash == API.GetHashKey("VANHORN"))
-            {
-                return "~COLOR_GREEN~Vanhorn";
-            }
-            else if (town_hash == API.GetHashKey("Wallace"))
-            { 
-                return "~COLOR_GREEN~Wallace";
-            }
-            else if (town_hash == API.GetHashKey("wapiti"))
-            {
-                return "~COLOR_GREEN~Wapiti";
-            }
-            else if (town_hash == API.GetHashKey("AguasdulcesFarm"))
-            {
-                return "~COLOR_GREEN~Aguasdulces Farm";
-            }
-            else if (town_hash == API.GetHashKey("AguasdulcesRuins"))
-            {
-                return "~COLOR_GREEN~Aguasdulces Ruins";
-            }
-            else if (town_hash == API.GetHashKey("AguasdulcesVilla"))
-            {
-                return "~COLOR_GREEN~Aguasdulces Villa";
-            }
-            else if (town_hash == API.GetHashKey("Manicato"))
-            {
-                return "~COLOR_GREEN~Manicato";
-            }
-            else
-            {
-                return GetConfig.Langs["fuera_ciudad"];
+                case 7359335:
+                    return "~COLOR_GREEN~Annesburg";
+                    break;
+                case 3550472498:
+                    return "~COLOR_GREEN~Armadillo";
+                    break;
+                case 1053078005:
+                    return "~COLOR_GREEN~Blackwater";
+                    break;
+                case 2586580314:
+                    return "~COLOR_GREEN~BeechersHope";
+                    break;
+                case 1862420670:
+                    return "~COLOR_GREEN~Braithwaite";
+                    break;
+                case 1778899666:
+                    return "~COLOR_GREEN~Caliga";
+                    break;
+                case 2443661614:
+                    return "~COLOR_GREEN~Cornwall";
+                    break;
+                case 3821916002:
+                    return "~COLOR_GREEN~Emerald";
+                    break;
+                case 406627834:
+                    return "~COLOR_GREEN~Lagras";
+                    break;
+                case 1463094051:
+                    return "~COLOR_GREEN~Manzanita";
+                    break;
+                case 2046780049:
+                    return "~COLOR_GREEN~Rhodes";
+                    break;
+                case 3529426767:
+                    return "~COLOR_GREEN~Saint Denis";
+                    break;
+                case 427683330:
+                    return "~COLOR_GREEN~Strawberry";
+                    break;
+                case 2770008149:
+                    return "~COLOR_GREEN~Tumbleweed";
+                    break;
+                case 459833523:
+                    return "~COLOR_GREEN~Valentine";
+                    break;
+                case 2126321341:
+                    return "~COLOR_GREEN~Vanhorn";
+                    break;
+                case 1663398575:
+                    return "~COLOR_GREEN~Wapiti";
+                    break;
+                default:
+                    return GetConfig.Langs["fuera_ciudad"];
+                    break;
             }
         }
 
