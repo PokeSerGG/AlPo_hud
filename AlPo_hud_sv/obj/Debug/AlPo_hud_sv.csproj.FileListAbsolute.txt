@@ -1,0 +1,7 @@
+C:\Proyectos\AlPo_hud\build\AlPo_hud\Config.json
+C:\Proyectos\AlPo_hud\build\AlPo_hud\AlPo_hud_sv.net.dll
+C:\Proyectos\AlPo_hud\build\AlPo_hud\AlPo_hud_sv.net.pdb
+C:\Proyectos\AlPo_hud\AlPo_hud_sv\obj\Debug\AlPo_hud_sv.csprojAssemblyReference.cache
+C:\Proyectos\AlPo_hud\AlPo_hud_sv\obj\Debug\AlPo_hud_sv.csproj.CoreCompileInputs.cache
+C:\Proyectos\AlPo_hud\AlPo_hud_sv\obj\Debug\AlPo_hud_sv.net.dll
+C:\Proyectos\AlPo_hud\AlPo_hud_sv\obj\Debug\AlPo_hud_sv.net.pdb
