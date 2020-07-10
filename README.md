@@ -17,4 +17,4 @@
 ## 3. Info
 - KLS
 - To get support --> [Discord](http://discord.vorpcore.com/)
-- Made between Poke and [Alphatule](https://github.com/alphatule)
+- Made between Poke, [Alphatule](https://github.com/alphatule) and [Xmau](https://github.com/Xmaught)
