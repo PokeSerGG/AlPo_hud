@@ -4,6 +4,10 @@
   "Fahrenheit": false,
   // Sensitive data: Modify only under your responsability
 
+  "Text": {
+    "Pos": [ 0.20, 0.959 ]
+  },
+
   // Celsius:
   "ExtremeColdC": -5,
   "ColdC": 5,

@@ -55,6 +55,8 @@ namespace AlPo_hud_cl
                 temp = (temp * 9 / 5) + 32;
             }
 
+            temperature = temp;
+
             foreach (var v in ClotheList.ClothesCats)
             {
                 bool IsWearingClothes = Function.Call<bool>((Hash)0xFB4891BD7578CDC1, API.PlayerPedId(), v);
@@ -62,15 +64,16 @@ namespace AlPo_hud_cl
                 {
                     if (Convert.ToBoolean(GetConfig.Config["Fahrenheit"]))
                     {
-                        temperature = temp + 1.8;
-                        temperature = Math.Floor(temperature * 10) / 10;
+                        temperature = temperature + 1.8;
                     }
                     else
                     {
-                        temperature = temp + 1;
+                        temperature = temperature + 1;
                     }
                 }
             }
+
+            temperature = Math.Floor(temperature * 10) / 10;
 
             foreach (var d in directions)
             {
@@ -103,62 +106,62 @@ namespace AlPo_hud_cl
                 {
                     if (temp < Convert.ToInt32(GetConfig.Config["ExtremeColdF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_PLATFORM_BLUE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_PLATFORM_BLUE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["ColdF"]) && temp >= Convert.ToInt32(GetConfig.Config["ExtremeColdF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["CoolF"]) && temp >= Convert.ToInt32(GetConfig.Config["ColdF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUELIGHT~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUELIGHT~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["WarmF"]) && temp >= Convert.ToInt32(GetConfig.Config["CoolF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["HotF"]) && temp >= Convert.ToInt32(GetConfig.Config["WarmF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_YELLOWSTRONG~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_YELLOWSTRONG~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["ExtremeHotF"]) && temp >= Convert.ToInt32(GetConfig.Config["HotF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_ORANGE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_ORANGE~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp >= Convert.ToInt32(GetConfig.Config["ExtremeHotF"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_NET_PLAYER2~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_NET_PLAYER2~" + temperature.ToString() + "°F~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                 }
                 else
                 {
                     if (temp < Convert.ToInt32(GetConfig.Config["ExtremeColdC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_PLATFORM_BLUE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_PLATFORM_BLUE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["ColdC"]) && temp >= Convert.ToInt32(GetConfig.Config["ExtremeColdC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["CoolC"]) && temp >= Convert.ToInt32(GetConfig.Config["ColdC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUELIGHT~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_BLUELIGHT~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["WarmC"]) && temp >= Convert.ToInt32(GetConfig.Config["CoolC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["HotC"]) && temp >= Convert.ToInt32(GetConfig.Config["WarmC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_YELLOWSTRONG~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_YELLOWSTRONG~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp < Convert.ToInt32(GetConfig.Config["ExtremeHotC"]) && temp >= Convert.ToInt32(GetConfig.Config["HotC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_ORANGE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_ORANGE~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                     else if (temp >= Convert.ToInt32(GetConfig.Config["ExtremeHotC"]))
                     {
-                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_NET_PLAYER2~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, 0.20f, 0.959f, 0.3f, 0.3f, 255, 255, 255, 255, true, false);
+                        await DrawTxt(GetConfig.Langs["zona"] + GetCurentTownName() + "~q~ - " + direction1 + " - " + GetConfig.Langs["dia"] + DayOfWeek() + "\n" + GetConfig.Langs["temp"] + "~COLOR_NET_PLAYER2~" + temperature.ToString() + "°C~q~" + " - " + GetConfig.Langs["hora"] + hora + ":" + minuto, GetConfig.Config["Text"]["Pos"][0].ToObject<float>(), GetConfig.Config["Text"]["Pos"][1].ToObject<float>(), 0.3f, 0.3f, 255, 255, 255, 255, true, false);
                     }
                 }
             }
